@@ -2,13 +2,16 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { ProfileLayout } from '../../components/ProfileLayout'
+import { mockUser } from '../../core/mock/mock';
 import styles from '../styles/Home.module.scss'
 
 const Profile: NextPage = () => {
   return (
       <>
-          <h1>Профиль</h1>
-          <ProfileLayout />
+          
+          <ProfileLayout user={mockUser}>
+            <h1>Профиль</h1>
+          </ProfileLayout>
       </>
 
   )

@@ -1,0 +1,22 @@
+.icon {
+    width: 18px;
+    height: 18px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    
+    &_search {
+        background-image: url('../../../assets/icons/search.svg');
+        background-repeat: no-repeat;
+    }
+
+    &_bell {
+        background-image: url('../../../assets/icons/bell.svg');
+        background-repeat: no-repeat;
+    }
+
+    &_eye {
+        background-image: url('../../../assets/icons/eye.svg');
+        background-repeat: no-repeat;
+    }
+}
