@@ -1,0 +1,96 @@
+@import '../../../styles/variables.scss';
+
+
+.nav {
+    width: 190px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $color-navyblue;
+    margin-top: 55px;
+    font-weight: 400;
+    line-height: 17px;
+    color: $color-white;
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    &__item {
+        margin-bottom: 10px;
+        position: relative;
+
+        & a {
+            width: 190px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            padding-left: 52px;
+        }
+        
+        &:last-child {
+            position: fixed;
+            bottom: 40px;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 18px;
+            height: 18px;
+            top: calc(50% - 18px/2);
+            left: 20px;
+            background-color: $color-white;
+        }
+
+        &.heart::before {
+            -webkit-mask-image: url('../../../assets/icons/heart.svg');
+            mask-image: url('../../../assets/icons/heart.svg');
+        }
+
+        &.doctors::before {
+            -webkit-mask-image: url('../../../assets/icons/doctors.svg');
+            mask-image: url('../../../assets/icons/doctors.svg');
+        }
+
+        &.message::before {
+            -webkit-mask-image: url('../../../assets/icons/message.svg');
+            mask-image: url('../../../assets/icons/message.svg');
+        }
+
+        &.test::before {
+            -webkit-mask-image: url('../../../assets/icons/test.svg');
+            mask-image: url('../../../assets/icons/test.svg');
+        }
+
+        &.useful::before {
+            -webkit-mask-image: url('../../../assets/icons/useful.svg');
+            mask-image: url('../../../assets/icons/useful.svg');
+        }
+
+        &.help::before {
+            -webkit-mask-image: url('../../../assets/icons/help.svg');
+            mask-image: url('../../../assets/icons/help.svg');
+        }
+
+        &_active {
+            background-color: $color-white;
+            color: $color-blueberry;
+
+            &::before {
+                background-color: $color-blueberry;
+            }
+        }
+
+    }
+
+    &__logo {
+        margin-left: 20px;
+        position: fixed;
+        bottom: 16px;
+    }
+}

@@ -1,7 +1,9 @@
 @import '~normalize.css';
 @import './variables.scss';
 @import '../components/UI/AppIcon/AppIcon.scss';
-@import '../components/ProfileLayout/ProfileLayout.scss';
+@import '../components/UI/AppButton/AppButton.scss';
+@import '../components/ProfileLayout/Header/Header.scss';
+@import '../components/ProfileLayout/Nav/Nav.scss';
 
 html,
 body {
