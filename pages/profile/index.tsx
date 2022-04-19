@@ -1,11 +1,16 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { ProfileLayout } from '../../components/ProfileLayout'
 import styles from '../styles/Home.module.scss'
 
-const Home: NextPage = () => {
+const Profile: NextPage = () => {
   return (
-    <h1>Домашняя страница</h1>
+      <>
+          <h1>Профиль</h1>
+          <ProfileLayout />
+      </>
+
   )
 }
 
@@ -75,4 +80,4 @@ const Home: NextPage = () => {
   )
 } */
 
-export default Home;
+export default Profile;
