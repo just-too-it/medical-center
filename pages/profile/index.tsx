@@ -1,21 +1,27 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { AppointmentList } from '../../components/AppointmentList';
 import { ProfileLayout } from '../../components/ProfileLayout'
-import { mockUser } from '../../core/mock/mock';
+import { mockUser, mockAppointmentCards } from '../../core/mock/mock';
 import styles from '../styles/Home.module.scss'
+import { nav } from '../../core/nav';
 
 const Profile: NextPage = () => {
   return (
       <>
-          
-          <ProfileLayout user={mockUser}>
-            <h1>Профиль</h1>
+          <ProfileLayout user={mockUser} navigation={nav} >
+            <div className="profile">
+              <div className="profile__appointment">
+                <AppointmentList appointmentCards={mockAppointmentCards}/>
+              </div>
+            </div>
           </ProfileLayout>
       </>
 
   )
 }
+{/* <AppointmentList appointmentCards={mockAppointmentCards} /> */}
 
 /* const Home: NextPage = () => {
   return (

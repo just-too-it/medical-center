@@ -1,15 +1,18 @@
 @import '~normalize.css';
 @import './variables.scss';
+@import './Profile.scss';
 @import '../components/UI/AppIcon/AppIcon.scss';
 @import '../components/UI/AppButton/AppButton.scss';
 @import '../components/ProfileLayout/Header/Header.scss';
 @import '../components/ProfileLayout/Nav/Nav.scss';
+@import '../components/AppointmentCard/AppointmentCard.scss';
 
 html,
 body {
   padding: 0;
   margin: 0;
   color: $color-black;
+  background-color: #E5E5E5;
   width: $desktop-width;
   font-family: 'Rubik', sans-serif;
   font-style: normal;

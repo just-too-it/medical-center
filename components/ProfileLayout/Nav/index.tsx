@@ -13,8 +13,7 @@ export const Nav: FC<{ items: INavItem[] }> = (props) => {
   const btnRequest: IButton = {
       text: 'Подать заявку',
       type: 'button',
-      btnOnClick: ()=>{},
-      style: {marginLeft: "20px"}
+      btnOnClick: ()=>{}
   }
 
   return (
@@ -35,7 +34,9 @@ export const Nav: FC<{ items: INavItem[] }> = (props) => {
           </li>
         ))}
       </ul>
-      <AppButton btn={btnRequest} />
+      <div className='nav__request'>
+        <AppButton btn={btnRequest} />
+      </div>
       <div className="nav__logo">
         <Link href={'/mock-url'}>
           <a>

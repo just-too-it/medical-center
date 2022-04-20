@@ -1,0 +1,49 @@
+.appointment-card {
+    width: 475px;
+    height: 174px;
+    background: $color-white;
+    box-shadow: 0px 0px 5px #EBE7FF;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    & span {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 5px;
+    }
+
+    &__doctor {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    &__image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 10px;
+    }
+
+    &__name {
+        font-weight: 500;
+        line-height: 17px;
+        margin-bottom: 4px;
+    }
+
+    &__post {
+        font-weight: 400;
+        line-height: 17px;
+        color: #EBE7FF;
+    }
+
+    &__control {
+        align-self: end;
+    }
+}

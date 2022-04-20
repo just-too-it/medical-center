@@ -61,6 +61,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        cursor: pointer;
     }
 
     &__open {
@@ -72,5 +73,6 @@
         background-repeat: no-repeat;
         background-position: 50% 50%;
         border: none;
+        cursor: pointer;
     }
 }
