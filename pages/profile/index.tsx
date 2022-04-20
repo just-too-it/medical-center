@@ -1,30 +1,34 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
 import { AppointmentList } from '../../components/AppointmentList';
-import { ProfileLayout } from '../../components/ProfileLayout'
+import { ProfileLayout } from '../../components/ProfileLayout';
 import { mockUser, mockAppointmentCards } from '../../core/mock/mock';
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/Home.module.scss';
 import { nav } from '../../core/nav';
 import { PatientCard } from '../../components/PatientCard';
 import { patientCards } from '../../core/patientCards';
+import { PatientCards } from '../../components/PatientCards';
 
 const Profile: NextPage = () => {
   return (
-      <>
-          <ProfileLayout user={mockUser} navigation={nav} >
-            <div className="profile">
-              <div className="profile__appointment">
-                <AppointmentList appointmentCards={mockAppointmentCards}/>
-                <PatientCard card={patientCards[1]}/>
-              </div>
-            </div>
-          </ProfileLayout>
-      </>
-
-  )
+    <>
+      <ProfileLayout user={mockUser} navigation={nav}>
+        <div className="profile">
+          <div className="profile__appointment">
+            <AppointmentList appointmentCards={mockAppointmentCards} />
+          </div>
+          <div className="profile__patient">
+            <PatientCards cards={patientCards} />
+          </div>
+        </div>
+      </ProfileLayout>
+    </>
+  );
+};
+{
+  /* <AppointmentList appointmentCards={mockAppointmentCards} /> */
 }
-{/* <AppointmentList appointmentCards={mockAppointmentCards} /> */}
 
 /* const Home: NextPage = () => {
   return (

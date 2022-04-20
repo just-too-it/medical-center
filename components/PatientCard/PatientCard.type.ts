@@ -1,6 +1,7 @@
 export interface IPatientCard {
-    title: string;
-    description?: string;
-    list?: string[];
-    iconName: string
+  title: string;
+  description?: string;
+  list?: string[];
+  iconName: string;
+  cardOnClick?(): void;
 }

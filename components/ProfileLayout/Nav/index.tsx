@@ -38,7 +38,7 @@ export const Nav: FC<{ items: INavItem[] }> = (props) => {
         <AppButton btn={btnRequest} />
       </div>
       <div className="nav__logo">
-        <Link href={'/mock-url'}>
+        <Link href={'https://appvelox.ru/'}>
           <a>
             <Image src={logoAppvelox} width="113px" height="20px" alt="Appvelox" />
           </a>

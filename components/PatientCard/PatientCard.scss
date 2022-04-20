@@ -5,15 +5,25 @@
     background: $color-white;
     box-shadow: 0px 0px 5px $color-blueberry-light;
     border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        border: 2px solid $color-lightblue;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 5px color-blueberry-light;
+    }
 
     &:hover .patient-card__image {
-            background-color: $color-lightblue;
+        background-color: $color-lightblue;
     }
     &:hover .patient-card__icon {
         background-color: $color-white;
     }
     &:hover .patient-card__title::after {
         background-color: $color-lightblue;
+    }
+    &:hover .patient-card__item {
+        color: $color-lightblue;
     }
 
     &__image {
@@ -23,6 +33,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-shrink: 0;
     }
 
     &__icon {
@@ -54,7 +65,7 @@
     }
 
     &__content {
-        padding: 20px 36px;
+        padding: 20px 34px;
     }
 
     &__title {
@@ -71,18 +82,26 @@
             left: 0;
             width: 335px;
             height: 2px;
-            background-color:  $color-blueberry-light;
+            background-color: $color-blueberry-light;
         }
     }
 
     &__list {
-        
+        margin: 0;
+        padding: 0;
     }
 
     &__item {
         margin-bottom: 7px;
+        margin-left: 15px;
         font-size: 16px;
         line-height: 24px;
+        color: $color-blueberry-light;
+
+        & span {
+            color: $color-black;
+        }
+
     }
 
     &__description {
