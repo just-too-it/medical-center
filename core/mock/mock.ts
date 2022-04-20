@@ -79,4 +79,21 @@ export const mockAppointmentCards: IAppointmentCard[] = [
       post: 'Терапевтическое отделение',
     },
   },
+  {
+    id: 5,
+    dateFull: {
+      day: 'Четверг',
+      date: '02.07.20',
+      time: '12:30',
+    },
+    clinic: {
+      name: 'СПБ ГБУЗ "Городская поликлиника №25"',
+      address: 'пр. Солидарности, д. 1, к. 1, лит. А',
+    },
+    doctor: {
+      image: malyshkoImage,
+      name: 'Малушко Т. Н.',
+      post: 'Хирургия',
+    },
+  },
 ];

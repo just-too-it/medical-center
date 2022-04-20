@@ -1,0 +1,36 @@
+.appointment-list {
+    &__title {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    &__item {
+        margin-right: 20px;
+    }
+
+    &__countRest {
+        font-weight: 400;
+        text-align: center;
+
+        & a {
+            text-decoration-line: underline;
+            color: $color-lightblue;
+        }
+    }
+}
