@@ -6,6 +6,8 @@ import { ProfileLayout } from '../../components/ProfileLayout'
 import { mockUser, mockAppointmentCards } from '../../core/mock/mock';
 import styles from '../styles/Home.module.scss'
 import { nav } from '../../core/nav';
+import { PatientCard } from '../../components/PatientCard';
+import { patientCards } from '../../core/patientCards';
 
 const Profile: NextPage = () => {
   return (
@@ -14,6 +16,7 @@ const Profile: NextPage = () => {
             <div className="profile">
               <div className="profile__appointment">
                 <AppointmentList appointmentCards={mockAppointmentCards}/>
+                <PatientCard card={patientCards[1]}/>
               </div>
             </div>
           </ProfileLayout>

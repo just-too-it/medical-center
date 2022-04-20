@@ -1,0 +1,92 @@
+.patient-card {
+    width: 540px;
+    height: 183px;
+    display: flex;
+    background: $color-white;
+    box-shadow: 0px 0px 5px $color-blueberry-light;
+    border-radius: 5px;
+
+    &:hover .patient-card__image {
+            background-color: $color-lightblue;
+    }
+    &:hover .patient-card__icon {
+        background-color: $color-white;
+    }
+    &:hover .patient-card__title::after {
+        background-color: $color-lightblue;
+    }
+
+    &__image {
+        width: 133px;
+        height: 183px;
+        background-color: $color-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__icon {
+        width: 50px;
+        height: 50px;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-color: $color-blueberry-light;
+
+        &.info {
+            -webkit-mask-image: url('../../assets/icons/patient_info.svg');
+            mask-image: url('../../assets/icons/patient_info.svg');
+        }
+
+        &.add {
+            -webkit-mask-image: url('../../assets/icons/patient_add.svg');
+            mask-image: url('../../assets/icons/patient_add.svg');
+        }
+
+        &.analysis {
+            -webkit-mask-image: url('../../assets/icons/patient_analysis.svg');
+            mask-image: url('../../assets/icons/patient_analysis.svg');
+        }
+
+        &.history {
+            -webkit-mask-image: url('../../assets/icons/patient_history.svg');
+            mask-image: url('../../assets/icons/patient_history.svg');
+        }
+    }
+
+    &__content {
+        padding: 20px 36px;
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 33px;
+        position: relative;
+        margin-bottom: 30px;
+
+        &::after {
+            position: absolute;
+            content: '';
+            bottom: -10px;
+            left: 0;
+            width: 335px;
+            height: 2px;
+            background-color:  $color-blueberry-light;
+        }
+    }
+
+    &__list {
+        
+    }
+
+    &__item {
+        margin-bottom: 7px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &__description {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
