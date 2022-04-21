@@ -10,13 +10,23 @@ import { PatientCard } from '../../components/PatientCard';
 import { patientCards } from '../../core/patientCards';
 import { PatientCards } from '../../components/PatientCards';
 import { AppointmentListView } from '../../components/AppointmentList/AppointmentListView';
+import { Breadcrumbs } from '../../components/Breadcrumbs';
+import { IBreadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs.type';
+import { PagesLinks } from '../../core/constants/pagesLinks.constant';
 
 const Records: NextPage = () => {
+  const btnBack: IBreadcrumbs = {
+    title: 'Мои записи',
+    link: PagesLinks.PROFILE
+  }
+
   return (
     <>
       <ProfileLayout user={mockUser} navigation={nav}>
         <div className="records">
-          <h2 className="records__title">Мои записи</h2>
+          <div className="records__breadcrumbs">
+            <Breadcrumbs item={ btnBack }/>
+          </div>
           <div className="records__appointment">
             <AppointmentList appointmentCards={mockAppointmentCards} view={AppointmentListView.VERTICAL}/>
           </div>
