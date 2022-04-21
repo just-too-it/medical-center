@@ -9,6 +9,7 @@ import { nav } from '../../core/nav';
 import { PatientCard } from '../../components/PatientCard';
 import { patientCards } from '../../core/patientCards';
 import { PatientCards } from '../../components/PatientCards';
+import { AppointmentListView } from '../../components/AppointmentList/AppointmentListView';
 
 const Profile: NextPage = () => {
   return (
@@ -16,7 +17,7 @@ const Profile: NextPage = () => {
       <ProfileLayout user={mockUser} navigation={nav}>
         <div className="profile">
           <div className="profile__appointment">
-            <AppointmentList appointmentCards={mockAppointmentCards} />
+            <AppointmentList appointmentCards={mockAppointmentCards} view={AppointmentListView.HORIZONTAL}/>
           </div>
           <div className="profile__patient">
             <PatientCards cards={patientCards} />
@@ -26,9 +27,7 @@ const Profile: NextPage = () => {
     </>
   );
 };
-{
-  /* <AppointmentList appointmentCards={mockAppointmentCards} /> */
-}
+
 
 /* const Home: NextPage = () => {
   return (

@@ -18,6 +18,35 @@
         margin: 0;
         padding: 0;
         display: flex;
+
+        &_vertical {
+            flex-direction: column;
+            height: 646px;
+            overflow: auto;
+            overflow-x: hidden;
+
+            & .appointment-list__item {
+                margin-bottom: 15px; 
+            }
+
+            /* Works on Firefox */
+            scrollbar-color: $color-navyblue $color-blueberry-light;
+            scrollbar-width: thin;
+            scrollbar-gutter: 5px;   
+
+            /* Works on Chrome, Edge, and Safari */
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: $color-blueberry-light;
+                border-radius: 5px; 
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $color-navyblue;    
+                border-radius: 5px;      
+              } 
+        }
     }
 
     &__item {
