@@ -13,6 +13,7 @@ import { AppointmentListView } from '../../components/AppointmentList/Appointmen
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 import { IBreadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs.type';
 import { PagesLinks } from '../../core/constants/pagesLinks.constant';
+import { CalendarEntries } from '../../components/CalendarEntries';
 
 const Records: NextPage = () => {
   const btnBack: IBreadcrumbs = {
@@ -27,10 +28,13 @@ const Records: NextPage = () => {
           <div className="records__breadcrumbs">
             <Breadcrumbs item={ btnBack }/>
           </div>
-          <div className="records__appointment">
-            <AppointmentList appointmentCards={mockAppointmentCards} view={AppointmentListView.VERTICAL}/>
-          </div>
-          <div className="records__calendar">
+          <div className='records__content'>
+            <div className="records__appointment">
+              <AppointmentList appointmentCards={mockAppointmentCards} view={AppointmentListView.VERTICAL}/>
+            </div>
+            <div className="records__calendar">
+              <CalendarEntries />
+            </div>
           </div>
         </div>
       </ProfileLayout>

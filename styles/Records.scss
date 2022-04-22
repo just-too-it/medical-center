@@ -8,8 +8,17 @@
         margin-bottom: 13px;
     }
     
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+
     &__appointment {
 
+    }
+
+    &__calendar {
+        
     }
 
 }

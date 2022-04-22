@@ -1,0 +1,42 @@
+.calendar-entries {
+/*     &__tile {
+        color: red;
+    } */
+
+    & .marker {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: $color-lightblue;
+        color: $color-white;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+       /*  &::before {
+            position: absolute;
+            content:'';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: blue;
+            top:0;
+            left:0;
+        } */
+    }
+    &.react-calendar {
+        width: 573px;
+        height: 481px;
+
+        & .react-calendar__tile {
+            position: relative;
+        }
+    }
+    
+}

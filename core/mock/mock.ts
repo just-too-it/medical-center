@@ -13,11 +13,7 @@ export const mockUser: IUser = {
 export const mockAppointmentCards: IAppointmentCard[] = [
   {
     id: 1,
-    dateFull: {
-      day: 'Понедельник',
-      date: '15.06.20',
-      time: '15:30',
-    },
+    date: new Date(2020, 5, 15, 15, 30),
     clinic: {
       name: 'СПБ ГБУЗ "Городская поликлиника №25"',
       address: 'пр. Солидарности, д. 1, к. 1, лит. А',
@@ -30,11 +26,7 @@ export const mockAppointmentCards: IAppointmentCard[] = [
   },
   {
     id: 2,
-    dateFull: {
-      day: 'Понедельник',
-      date: '15.06.20',
-      time: '18:30',
-    },
+    date: new Date(2020, 5, 15, 18, 30),
     clinic: {
       name: 'СПБ ГБУЗ "Городская поликлиника №25"',
       address: 'пр. Солидарности, д. 1, к. 1, лит. А',
@@ -47,11 +39,7 @@ export const mockAppointmentCards: IAppointmentCard[] = [
   },
   {
     id: 3,
-    dateFull: {
-      day: 'Вторник',
-      date: '30.06.20',
-      time: '12:10',
-    },
+    date: new Date(2020, 5, 30, 12, 10),
     clinic: {
       name: 'СПБ ГБУЗ "Городская поликлиника №25"',
       address: 'пр. Солидарности, д. 1, к. 1, лит. А',
@@ -64,11 +52,7 @@ export const mockAppointmentCards: IAppointmentCard[] = [
   },
   {
     id: 4,
-    dateFull: {
-      day: 'Четверг',
-      date: '02.07.20',
-      time: '12:30',
-    },
+    date: new Date(2020, 6, 2, 12, 30),
     clinic: {
       name: 'СПБ ГБУЗ "Городская поликлиника №25"',
       address: 'пр. Солидарности, д. 1, к. 1, лит. А',
@@ -81,11 +65,7 @@ export const mockAppointmentCards: IAppointmentCard[] = [
   },
   {
     id: 5,
-    dateFull: {
-      day: 'Четверг',
-      date: '02.07.20',
-      time: '12:30',
-    },
+    date: new Date(2020, 6, 2, 13, 30),
     clinic: {
       name: 'СПБ ГБУЗ "Городская поликлиника №25"',
       address: 'пр. Солидарности, д. 1, к. 1, лит. А',

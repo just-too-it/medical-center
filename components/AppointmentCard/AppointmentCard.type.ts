@@ -1,10 +1,6 @@
 export interface IAppointmentCard {
     id: number | string,
-    dateFull: {
-        day: string,
-        date: Date | any,
-        time: any
-    },
+    date: Date,
     clinic: {
         name: string,
         address: string
