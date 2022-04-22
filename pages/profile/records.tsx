@@ -14,12 +14,19 @@ import { Breadcrumbs } from '../../components/Breadcrumbs';
 import { IBreadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs.type';
 import { PagesLinks } from '../../core/constants/pagesLinks.constant';
 import { CalendarEntries } from '../../components/CalendarEntries';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const Records: NextPage = () => {
+  const visibleCards = useSelector(state=>state.profile.visibleCards);
+  const [cards, setCards] = useState(visibleCards)
+  
   const btnBack: IBreadcrumbs = {
     title: 'Мои записи',
     link: PagesLinks.PROFILE
   }
+
+  useEffect(()=>{},[cards])
 
   return (
     <>
@@ -30,7 +37,7 @@ const Records: NextPage = () => {
           </div>
           <div className='records__content'>
             <div className="records__appointment">
-              <AppointmentList appointmentCards={mockAppointmentCards} view={AppointmentListView.VERTICAL}/>
+              <AppointmentList appointmentCards={cards} view={AppointmentListView.VERTICAL}/>
             </div>
             <div className="records__calendar">
               <CalendarEntries />

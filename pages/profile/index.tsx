@@ -10,8 +10,21 @@ import { PatientCard } from '../../components/PatientCard';
 import { patientCards } from '../../core/patientCards';
 import { PatientCards } from '../../components/PatientCards';
 import { AppointmentListView } from '../../components/AppointmentList/AppointmentListView';
+import { useSelector, useDispatch } from 'react-redux';
+import userimage2 from '../../assets/icons/back.svg'
+import { useEffect } from 'react';
 
 const Profile: NextPage = () => {
+/*   const user = useSelector(state=>state.profile)
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch({type: "USER", payload: {id:2, name: 'NewName', image: userimage2}})
+  },[])
+  
+  console.log(user) */
+
+
   return (
     <>
       <ProfileLayout user={mockUser} navigation={nav}>

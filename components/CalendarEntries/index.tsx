@@ -3,6 +3,8 @@ import dynamic from 'next/dynamic';
 import 'react-calendar/dist/Calendar.css';
 import { isSameDay } from 'date-fns';
 import { mockAppointmentCards } from '../../core/mock/mock';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Calendar = dynamic(() => import('react-calendar'), { ssr: false });
 
@@ -16,7 +18,10 @@ const datesToAddContentTo = [
 
 export const CalendarEntries = () => {
   const [value, onChange] = useState(new Date());
-  const [appointmentCards, setAppointmentCards] = useState(mockAppointmentCards);
+  const visibleCards = useSelector(state=>state.profile.visibleCards)
+  const [appointmentCards, setAppointmentCards] = useState(visibleCards);
+  const dispatch = useDispatch();
+
 
   return (
     <div>
@@ -43,8 +48,9 @@ export const CalendarEntries = () => {
         onClickDay={(value) => {
           /* console.log('New date is: ', value) */
           const newArray = appointmentCards.filter((card) => isSameDay(card.date, value));
-        console.log(newArray)
-        setAppointmentCards(newArray)
+        /* console.log(newArray) */
+        dispatch({type: "VISIBLE_CARDS", payload: newArray})
+        //setAppointmentCards(newArray)
         
         }}
       />
