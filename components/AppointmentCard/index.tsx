@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { DAYS } from '../../core/constants/days.constant';
+import { DAYS } from '../../core/constants/date.constant';
 import { AppButton } from '../UI/AppButton';
 import { IButton } from '../UI/AppButton/AppButton.type';
 import { IAppointmentCard } from './AppointmentCard.type';

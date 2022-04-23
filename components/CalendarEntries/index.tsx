@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import 'react-calendar/dist/Calendar.css';
-import { isSameDay } from 'date-fns';
+import { isSameDay, format } from 'date-fns';
 import { mockAppointmentCards } from '../../core/mock/mock';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { MONTHS } from '../../core/constants/date.constant'
 
 const Calendar = dynamic(() => import('react-calendar'), { ssr: false });
 
@@ -29,6 +29,7 @@ export const CalendarEntries = () => {
         onChange={onChange}
         value={value}
         className="calendar-entries"
+        navigationLabel ={({ date, label, locale, view }) => `${MONTHS[date.getMonth()]}, ${date.getFullYear()}` }
         tileContent={({ date, view }) => {
           {
             let numberOfEntries = 0;
@@ -43,7 +44,7 @@ export const CalendarEntries = () => {
             }
           }
         }}
-        activeStartDate={new Date(2020, 5, 1)}
+        defaultActiveStartDate={new Date(2020, 5, 1)}
         /* tileClassName={name} */
         onClickDay={(value) => {
           /* console.log('New date is: ', value) */
