@@ -1,6 +1,4 @@
 .records {
-    margin-top: 55px;
-    margin-left: 190px;
     padding: 15px 40px 20px 20px;
 
     &__breadcrumbs {
@@ -11,6 +9,7 @@
     &__content {
         display: flex;
         justify-content: space-between;
+        width: 1116px;
     }
 
     &__appointment {

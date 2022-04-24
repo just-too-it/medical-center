@@ -2,16 +2,17 @@
 
 
 .header {
+    width: inherit;
     height: 55px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     background-color: $color-lightblue;
     display: flex;
     justify-content: right;
     align-items: center;
     padding-right: 40px;
+    z-index: 1;
+    margin: 0 auto;
+    grid-column-start: 1;
+    grid-column-end: 3;
 
     &__logo {
         width: 190px;

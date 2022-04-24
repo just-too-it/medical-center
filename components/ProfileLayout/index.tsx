@@ -14,11 +14,14 @@ export const ProfileLayout: FC<{ user: IUser, navigation: INavItem[], children:R
 
   return (
     <>
-        <Header user={props.user}/>
-        <Nav items={props.navigation}/>
-      <main>
-          {props.children}
-      </main>
+        <div className="container">
+          <Header user={props.user}/>
+          <Nav items={props.navigation}/>
+          <main>
+              {props.children}
+          </main>
+        </div>
+        
     </>
   );
 };

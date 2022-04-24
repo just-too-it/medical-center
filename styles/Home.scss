@@ -1,0 +1,9 @@
+.home {
+    padding: 20px;
+    text-align: center;
+
+    & a {
+        text-decoration-line: underline;
+        color: #50CAFF;
+    }
+}

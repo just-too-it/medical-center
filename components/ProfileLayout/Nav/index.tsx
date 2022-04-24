@@ -23,7 +23,8 @@ export const Nav: FC<{ items: INavItem[] }> = (props) => {
           <li
             key={item.id}
             className={
-              item.link === route.pathname
+              /* item.link === route.pathname */
+              route.pathname.includes(item.link)
                 ? `nav__item nav__item_active ${item.iconName}`
                 : `nav__item ${item.iconName}`
             }

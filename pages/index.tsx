@@ -1,11 +1,26 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { PagesLinks } from '../core/constants/pagesLinks.constant'
 import styles from '../styles/Home.module.scss'
+import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
-    <h1>Домашняя страница</h1>
+    <div className='home'>
+      <h1>Выполнение тестового задания по Frontend</h1>
+      <p>Задание: реализовать веб-интерфейс управления записями на прием к врачу.</p>
+      <p>Реализованы экраны:</p>
+        <ul>
+          <li>
+          <Link href={PagesLinks.PROFILE}>
+              <a>личный кабинет список учреждений и поиск врачей,</a>
+          </Link>
+            </li>
+          <li>
+          <Link href={PagesLinks.RECORDS}><a>лк записи на прием</a></Link></li>
+        </ul>
+    </div>
   )
 }
 

@@ -1,5 +1,6 @@
 @import '~normalize.css';
 @import './variables.scss';
+@import './Home.scss';
 @import './Profile.scss';
 @import './Records.scss';
 @import '../components/UI/AppIcon/AppIcon.scss';
@@ -18,8 +19,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  width: $desktop-width;
-  min-width: 960px;
   color: $color-black;
   background-color: #FCFCFC;
   font-family: 'Rubik', sans-serif;
@@ -27,6 +26,15 @@ body {
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
+  overflow-y: hidden;
+}
+
+.container {
+  width: $desktop-width;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 190px auto;
+  grid-template-rows: 55px auto;
 }
 
 a {
