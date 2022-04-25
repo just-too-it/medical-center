@@ -11,10 +11,10 @@ export const Nav: FC<{ items: INavItem[] }> = (props) => {
   const route = useRouter();
 
   const btnRequest: IButton = {
-      text: 'Подать заявку',
-      type: 'button',
-      btnOnClick: ()=>{}
-  }
+    text: 'Подать заявку',
+    type: 'button',
+    btnOnClick: () => {},
+  };
 
   return (
     <nav className="nav">
@@ -23,7 +23,6 @@ export const Nav: FC<{ items: INavItem[] }> = (props) => {
           <li
             key={item.id}
             className={
-              /* item.link === route.pathname */
               route.pathname.includes(item.link)
                 ? `nav__item nav__item_active ${item.iconName}`
                 : `nav__item ${item.iconName}`
@@ -35,7 +34,7 @@ export const Nav: FC<{ items: INavItem[] }> = (props) => {
           </li>
         ))}
       </ul>
-      <div className='nav__request'>
+      <div className="nav__request">
         <AppButton btn={btnRequest} />
       </div>
       <div className="nav__logo">

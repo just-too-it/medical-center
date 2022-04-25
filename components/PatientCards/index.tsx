@@ -1,4 +1,3 @@
-import { createReadStream } from 'fs';
 import React, { FC } from 'react';
 import { PatientCard } from '../PatientCard';
 import { IPatientCard } from '../PatientCard/PatientCard.type';

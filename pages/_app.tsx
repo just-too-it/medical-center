@@ -12,7 +12,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-const makestore = ()=>store;
+const makestore = () => store;
 const wrapper = createWrapper(makestore);
 export default wrapper.withRedux(MyApp);
-/* export default MyApp; */

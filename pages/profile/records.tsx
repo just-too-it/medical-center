@@ -1,43 +1,37 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import { AppointmentList } from '../../components/AppointmentList';
 import { ProfileLayout } from '../../components/ProfileLayout';
-import { mockUser, mockAppointmentCards } from '../../core/mock/mock';
-import styles from '../styles/Home.module.scss';
 import { nav } from '../../core/nav';
-import { PatientCard } from '../../components/PatientCard';
-import { patientCards } from '../../core/patientCards';
-import { PatientCards } from '../../components/PatientCards';
 import { AppointmentListView } from '../../components/AppointmentList/AppointmentListView';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 import { IBreadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs.type';
 import { PagesLinks } from '../../core/constants/pagesLinks.constant';
 import { CalendarEntries } from '../../components/CalendarEntries';
-import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const Records: NextPage = () => {
-  const visibleCards = useSelector(state=>state.profile.visibleCards);
-  const [cards, setCards] = useState(visibleCards)
-  
+  const user = useSelector((state) => state.profile.user);
+
   const btnBack: IBreadcrumbs = {
     title: 'Мои записи',
-    link: PagesLinks.PROFILE
-  }
-
-  useEffect(()=>{},[cards])
+    link: PagesLinks.PROFILE,
+  };
 
   return (
     <>
-      <ProfileLayout user={mockUser} navigation={nav}>
+      <Head>
+        <title>Записи пациента в календаре</title>
+        <meta name="description" content="Календарь с записями пациента на прием к врачу." />
+      </Head>
+      <ProfileLayout user={user} navigation={nav}>
         <div className="records">
           <div className="records__breadcrumbs">
-            <Breadcrumbs item={ btnBack }/>
+            <Breadcrumbs item={btnBack} />
           </div>
-          <div className='records__content'>
+          <div className="records__content">
             <div className="records__appointment">
-              <AppointmentList appointmentCards={cards} view={AppointmentListView.VERTICAL}/>
+              <AppointmentList view={AppointmentListView.VERTICAL} />
             </div>
             <div className="records__calendar">
               <CalendarEntries />

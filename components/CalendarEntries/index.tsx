@@ -1,27 +1,17 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import 'react-calendar/dist/Calendar.css';
-import { isSameDay, format } from 'date-fns';
-import { mockAppointmentCards } from '../../core/mock/mock';
+import { isSameDay } from 'date-fns';
 import { useDispatch, useSelector } from 'react-redux';
-import { MONTHS } from '../../core/constants/date.constant'
+import { MONTHS } from '../../core/constants/date.constant';
+import { IAppointmentCard } from '../AppointmentCard/AppointmentCard.type';
 
 const Calendar = dynamic(() => import('react-calendar'), { ssr: false });
 
-const datesToAddContentTo = [
-  new Date('2020-06-15'),
-  new Date('2020-06-15'),
-  new Date('2020-07-02'),
-  new Date(),
-  new Date(),
-];
-
 export const CalendarEntries = () => {
   const [value, onChange] = useState(new Date());
-  const visibleCards = useSelector(state=>state.profile.visibleCards)
-  const [appointmentCards, setAppointmentCards] = useState(visibleCards);
+  const allCards = useSelector((state) => state.profile.cards as IAppointmentCard[]);
   const dispatch = useDispatch();
-
 
   return (
     <div>
@@ -29,81 +19,26 @@ export const CalendarEntries = () => {
         onChange={onChange}
         value={value}
         className="calendar-entries"
-        navigationLabel ={({ date, label, locale, view }) => `${MONTHS[date.getMonth()]}, ${date.getFullYear()}` }
+        navigationLabel={({ date }) => `${MONTHS[date.getMonth()]}, ${date.getFullYear()}`}
         tileContent={({ date, view }) => {
           {
             let numberOfEntries = 0;
             if (view === 'month') {
-              appointmentCards.forEach((card) => {
+              allCards.forEach((card) => {
                 if (isSameDay(card.date, date)) {
                   numberOfEntries++;
                 }
               });
-
               return numberOfEntries === 0 ? null : <div className="marker">{numberOfEntries}</div>;
             }
           }
         }}
         defaultActiveStartDate={new Date(2020, 5, 1)}
-        /* tileClassName={name} */
         onClickDay={(value) => {
-          /* console.log('New date is: ', value) */
-          const newArray = appointmentCards.filter((card) => isSameDay(card.date, value));
-        /* console.log(newArray) */
-        dispatch({type: "VISIBLE_CARDS", payload: newArray})
-        //setAppointmentCards(newArray)
-        
+          const visibleCards = allCards.filter((card) => isSameDay(card.date, value));
+          dispatch({ type: 'VISIBLE_CARDS', payload: visibleCards });
         }}
       />
     </div>
   );
 };
-
-/* if (datesToAddContentTo.find(dDate => isSameDay(dDate, date))) {
-  /* console.log(format(new Date("2022-04-01"), "'Today is a' eeee")) */
-/*   tileClass+=' newrtr';
-  setName(' newrtr')
-  content++
-  return <div className='newrtr'>{content}</div>;
-}  */
-
-/* 
-import { differenceInCalendarDays, format } from 'date-fns'; 
-
-export const isSameDay = (a, b) => {
-  return differenceInCalendarDays(a, b) === 0;
-} */
-
-/* function tileContent({ date, view }) {
-  let content = 0;
-  if (view === 'month') {
-    datesToAddContentTo.forEach((dayEntry) => {
-      if (isSameDay(dayEntry, date)) {
-        content++;
-      }
-    });
-
-    return content === 0 ? null : <div className='marker'>{content}</div>;
-  }
-} */
-
-
-/* function tileContent({ date, view }) {
-  let content = 0;
-  if (view === 'month') {
-    datesToAddContentTo.forEach((dayEntry) => {
-      if (isSameDay(dayEntry, date)) {
-        content++;
-      }
-    });
-
-    return content === 0 ? null : <div className="marker">{content}</div>;
-  }
-} */
-
-/* 
-appointmentCards.forEach((card) => {
-  if (isSameDay(card.date, value)) {
-    console.log(value);
-  }
-}); */

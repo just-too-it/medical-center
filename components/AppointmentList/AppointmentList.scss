@@ -1,4 +1,5 @@
 .appointment-list {
+    
     &__title {
         margin: 0;
         padding: 0;
@@ -7,6 +8,19 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 19px;
+    }
+
+    &__button-show {
+        margin-bottom: 13px;
+        margin-right: 40px;
+        margin-left: auto;
+        padding: 0;
+        border: 0;
+        display: block;
+        background: transparent;
+        text-decoration-line: underline;
+        color: $color-lightblue;
+        cursor: pointer;
     }
 
     &__content {
@@ -22,6 +36,7 @@
         display: flex;
 
         &_vertical {
+            width: 505px;
             flex-direction: column;
             height: 646px;
             overflow: auto;
