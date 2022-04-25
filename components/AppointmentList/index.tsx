@@ -25,7 +25,7 @@ export const AppointmentList: FC<{ view: string }> = (props) => {
   useEffect(() => {
     if (view === AppointmentListView.HORIZONTAL) {
       setCountRest(cards.slice(2).length);
-      setCards(cards.slice(0, 2));
+      setCards(cards.slice(0, 2)); 
     } else {
       setCards(allCards);
       dispatch({ type: 'VISIBLE_CARDS', payload: allCards });
@@ -53,11 +53,11 @@ export const AppointmentList: FC<{ view: string }> = (props) => {
       ) : null}
       <div className="appointment-list__content">
         <ul className={listClassName}>
-          {cards.map((card) => (
+          {cards !== null ? cards.map((card) => (
             <li key={card.id} className="appointment-list__item">
               <AppointmentCard appointmentCard={card} />
             </li>
-          ))}
+          )): null}
         </ul>
         <div className="appointment-list__countRest">
           {countRest > 0 && props.view === AppointmentListView.HORIZONTAL && <div>Еще {countRest} {changingWords(countRest, ['запись', 'записи', 'записей'])}</div>}

@@ -4,7 +4,7 @@ import { mockUser, mockAppointmentCards } from '../core/mock/mock';
 
 interface IProfile {
   user: IUser;
-  cards: IAppointmentCard[];
+  cards: IAppointmentCard[] | null;
   visibleCards: IAppointmentCard[] | null;
 }
 

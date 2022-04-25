@@ -35,6 +35,11 @@
         padding: 0;
         display: flex;
 
+        &_gorizontal {
+            width: 970px;
+            overflow-x: hidden;
+        }
+
         &_vertical {
             width: 505px;
             flex-direction: column;
