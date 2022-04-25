@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { PagesLinks } from '../../core/constants/pagesLinks.constant';
 import { AppointmentListView } from './AppointmentListView';
 import { useSelector, useDispatch } from 'react-redux';
+import { changingWords } from '../../core/utils/changingWords';
 
 export const AppointmentList: FC<{ view: string }> = (props) => {
   const { view } = props;
@@ -59,7 +60,7 @@ export const AppointmentList: FC<{ view: string }> = (props) => {
           ))}
         </ul>
         <div className="appointment-list__countRest">
-          {countRest > 0 && props.view === AppointmentListView.HORIZONTAL && <div>Еще {countRest} записи</div>}
+          {countRest > 0 && props.view === AppointmentListView.HORIZONTAL && <div>Еще {countRest} {changingWords(countRest, ['запись', 'записи', 'записей'])}</div>}
           {props.view === AppointmentListView.HORIZONTAL && (
             <Link href={PagesLinks.RECORDS}>
               <a>Подробнее</a>

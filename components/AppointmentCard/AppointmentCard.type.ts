@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image"
+
 export interface IAppointmentCard {
     id: number | string,
     date: Date,
@@ -6,7 +8,7 @@ export interface IAppointmentCard {
         address: string
     },
     doctor: {
-        image: string | any,
+        image: StaticImageData | string,
         name: string,
         post: string
     }

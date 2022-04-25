@@ -76,4 +76,5 @@ export const mockAppointmentCards: IAppointmentCard[] = [
       post: 'Хирургия',
     },
   },
+
 ];
